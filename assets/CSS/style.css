@@ -1,22 +1,29 @@
 * {
     box-sizing: border-box;
+
     
 }
 
 body{
-    background-image: url();
+    
     font-family: 'Hind', sans-serif;
-
-   
-}
-
-.jumbtron {
-    background-image: url();
-    color:#eeee;
+    /* background-image: url("../images/Midgar-Playground-FFVII-Remake.png"); */
+    margin: 0;
+    z-index: 2;
 
 }
 
-h3 {
+.jumbotron {
+    background-image: url("../images/Dark colored Bricks .jpg");
+    padding: 0px 45px 0 45px; 
+    color: #eeee;
+    margin: 0; 
+    
+    
+
+}
+
+h2 {
     padding: .75rem;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
@@ -26,4 +33,10 @@ h3 {
     margin: 0px 0px 20px 0px;
 
 
+}
+#footer {
+    clear: both;
+	position: sticky;
+    text-align: center;
+    
 }
