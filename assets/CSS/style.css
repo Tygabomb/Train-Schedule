@@ -7,7 +7,7 @@
 body{
     
     font-family: 'Hind', sans-serif;
-    /* background-image: url("../images/Midgar-Playground-FFVII-Remake.png"); */
+    background-color: rgb(224, 139, 99);
     margin: 0;
     z-index: 2;
 
@@ -36,6 +36,7 @@ h2 {
 }
 
 .clock {
+    background-image: url("../images/stock-photo-68326377.jpg");
     width: 30rem; 
     height: 30rem;
     border: 20px solid whitesmoke;
