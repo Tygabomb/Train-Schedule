@@ -31,7 +31,7 @@ let destination = "";
 let trainTime = "";
 let freq = 0;
 let trainData = [];
-let hhmmTime;
+var hhmmTime;
 let nextTrain;
 
 // let now = moment().format("HH: mm");
@@ -67,10 +67,10 @@ $("#submit").on("click", function (event) {
     time: freq,
   });
 
-  let trainData = {name: 'trainName', location:'destination', trainTime:'trainTime', time:'freq'};
+  // let trainData = {name: 'trainName', location:'destination', trainTime:'trainTime', time:'freq'};
 
 
-  localStorage.setItem("trainSchedule", JSON.stringify(trainData));
+  localStorage.setItem("Schedule", JSON.stringify(trainData));
   resetFields();
   populate(nextTrain)
   //   localStorage.setItem("city", JSON.stringify (destination));
@@ -87,21 +87,17 @@ $("#submit").on("click", function (event) {
 
   function populate(hhmmTime) {
     // new div infro 
-    var duration = moment.duration(moment(nextArrival, "HH:mm").diff(moment())).asMinutes()
+    var duration = moment.duration(moment(nextTrain, "HH:mm").diff(moment())).asMinutes()
     var minutesTill = Math.round(duration);
     console.log(duration);
     var tBody = $("tbody");
     var tRow = $("<tr>");
 
-
     var trainNa = $("<td>").text(trainName);
     var dest = $("<td>").text(destination);
-    var freqTime = $("<td>").text(frequencyTime);
-    var trainSchedule = $("<td>").text(nextArrival);
+    var freqTime = $("<td>").text(freq);
+    var trainSchedule = $("<td>").text(nextTrain);
     var minutesAway = $("<td>").text(minutesTill);
-
-
-
 
     // let newRow = $("<tr>");
     //   newRow.append($("<td>" + localStorage.val().trainName + "</td>"));
@@ -109,7 +105,6 @@ $("#submit").on("click", function (event) {
     //   newRow.append($("<td class='text-center'>" + localStorage.val().frequency + "</td>"));
     //   newRow.append($("<td class='text-center'>" + moment(nextTrain).format("LTS") + "</td>"));
     //   newRow.append($("<td class='text-center'><button class='arrival btn btn-danger btn-xs' data-key='" + trainData + "'>X</button></td>"));
-
 
     // remove button 
     // $(document).on("click", ".arrival", function() {
